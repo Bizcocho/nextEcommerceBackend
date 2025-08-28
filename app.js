@@ -1,16 +1,16 @@
-const express = require("express");
+import express, { json, urlencoded } from "express";
 const app = express();
-const cors = require("cors");
-const categories = require("./routes/categories");
-const products = require("./routes/products");
-const brands = require("./routes/brands");
-const options = require("./routes/options");
-const checkout = require("./routes/checkout");
+import cors from "cors";
+import categories from "./routes/categories";
+import products from "./routes/products";
+import brands from "./routes/brands";
+import options from "./routes/options";
+import checkout from "./routes/checkout";
 
-app.use(express.json());
+app.use(json());
 app.use(cors());
 
-app.use(express.urlencoded({ extended: false }));
+app.use(urlencoded({ extended: false }));
 
 app.use("/categories", categories);
 app.use("/products", products);
@@ -26,4 +26,4 @@ app.use((req, res, next) => {
   res.status(404).send("404 Not Found");
 });
 
-module.exports = app;
+export default app;
