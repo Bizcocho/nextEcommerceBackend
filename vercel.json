@@ -2,8 +2,8 @@
     "version": 2,
     "rewrites": [
         {
-            "src": "/(.*)",
-            "dest": "/bin/www"
+            "source": "/(.*)",
+            "destination": "/bin/www"
         }
     ]
 }
