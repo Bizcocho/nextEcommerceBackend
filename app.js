@@ -18,6 +18,8 @@ app.use("/brands", brands);
 app.use("/options", options);
 app.use("/checkout", checkout);
 
+app.get('/favicon.ico', (req, res) => res.status(204));
+
 app.get("/", (req, res) => {
   res.send("server is running 🚀");
 });
